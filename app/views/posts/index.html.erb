@@ -1,26 +1,7 @@
-<p id="notice"><%= notice %></p>
-<h1 class="text-4xl">Posts</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.author %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Post', new_post_path %>
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>
+<div class="bg-zinc-700 h-0.5"></div>
+<button class="flex ml-auto bg-zinc-800 rounded-md mt-4 border border-transparent hover:bg-zinc-900 hover:border-zinc-700 transition-all">
+  <%= link_to '+', new_post_path, class: 'p-2 px-4' %>
+</button>
