@@ -10,7 +10,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <%= yield %>
+  <body class="h-screen bg-zinc-900 items-start flex flex-col">
+    <header class="bg-zinc-950 text-zinc-50 py-6 flex flex-col w-full">
+      <%= link_to root_path, class: 'text-zinc-50 text-zinc-50 text-center' do %>
+        <h1 class="text-2xl">Blog do Reason.</h1>
+        <p>Aqui você encontrará conteudos sobre desenvolvimento web, tecnologia e games.</p>
+      <% end %>
+    </header>
+    <div class="px-4">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    <footer class="bg-zinc-950 text-center py-4 text-zinc-50 mt-auto w-full">Copyright. all rights reserved - <%= Date.current.year %>
+    </footer>
   </body>
 </html>
