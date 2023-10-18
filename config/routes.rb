@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
+  # CRUD gerado a partir do scaffold do rails
   resources :posts
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
