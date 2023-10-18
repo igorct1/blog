@@ -1,1 +1,27 @@
-<%= post.title %>
+<div class="bg-zinc-800 my-6 p-4 rounded-md border border-transparent hover:border-zinc-700 cursor-pointer">
+  <h2 class="text-red-500 text-2xl font-bold">
+    <%= link_to post.title, post_path(post) %>
+  </h2>
+  <div>
+    <em class="text-zinc-400">Por 
+      <%= post.author %> (<%= l post.created_at, format: :long %> )
+    </em>
+    <p class="pb-4">
+      <%= post.body.truncate(200)%>
+    </p>
+    <p class="text-zinc-400 text-sm ">
+      <%= pluralize(post.comments.count, 'Comentário') %>
+    </p>
+  </div>
+  <div class="flex gap-4 items-center mt-2">
+    <button class="bg-blue-500 p-1.5 rounded-md px-2.5">
+      <%= link_to 'Ver artigo', post_path(post) %>
+    </button>
+    <button class="bg-orange-500 p-1.5 rounded-md px-2.5">
+      <%= link_to 'Editar', edit_post_path(post) %>
+    </button>
+    <button class="bg-red-500 p-1.5 rounded-md px-2.5">
+      <%= link_to 'Apagar', post_path(post), method: :delete, data: {confirm: 'Você tem certeza?'} %>
+    </button>
+  </div>
+</div>

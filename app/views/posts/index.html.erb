@@ -1,5 +1,9 @@
-<% @posts.each do |post| %>
-  <%= render post %>
+<% if @posts.empty? %>
+  <p class="text-xl py-4">Não há posts a serem exibidos!</p>
+<% else  %>
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
 <% end %>
 <div class="bg-zinc-700 h-0.5"></div>
 <button class="flex ml-auto bg-zinc-800 rounded-md mt-4 border border-transparent hover:bg-zinc-900 hover:border-zinc-700 transition-all">
