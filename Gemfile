@@ -7,6 +7,7 @@ ruby '3.2.2'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.6'
 gem 'rails-i18n'
 gem 'friendly_id'
+gem 'pg_search'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server

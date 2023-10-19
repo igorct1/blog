@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   # CRUD gerado a partir do scaffold do rails
-  resources :posts
+  resources :posts do
+    get :search, on: :collection
+  end
   resources :comments, only: %i[create]
 end

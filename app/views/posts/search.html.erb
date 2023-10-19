@@ -1,0 +1,10 @@
+<h2 class="text-xl text-zinc-50">
+  <% if @posts.any? %>
+    Foi encontrado <%= pluralize(@posts.count, "resultado") %>
+  <% else %>
+    Nenhum resultado encontrado
+  <% end%>
+</h2>
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>
