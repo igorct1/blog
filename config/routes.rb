@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   # CRUD gerado a partir do scaffold do rails
   resources :posts
-  resources :comments
+  resources :comments, only: %i[create]
 end
