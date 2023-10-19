@@ -14,14 +14,8 @@
     </p>
   </div>
   <div class="flex gap-4 items-center mt-2">
-    <button class="bg-blue-500 p-1.5 rounded-md px-2.5">
-      <%= link_to 'Ver artigo', post_path(post) %>
-    </button>
-    <button class="bg-orange-500 p-1.5 rounded-md px-2.5">
-      <%= link_to 'Editar', edit_post_path(post) %>
-    </button>
-    <button class="bg-red-500 p-1.5 rounded-md px-2.5">
-      <%= link_to 'Apagar', post_path(post), method: :delete, data: {confirm: 'Você tem certeza?'} %>
-    </button>
+    <%= link_to 'Ver artigo', post_path(post), class:"bg-blue-500 p-1.5 rounded-md px-2.5" %>
+    <%= link_to 'Editar', edit_post_path(post), class:"bg-orange-500 p-1.5 rounded-md px-2.5" %>
+    <%= link_to 'Apagar', post_path(post), method: :delete, data: {confirm: 'Você tem certeza?'}, class:"bg-red-500 p-1.5 rounded-md px-2.5" %>
   </div>
 </div>
