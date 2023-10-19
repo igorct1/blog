@@ -46,11 +46,11 @@
       <%= form.hidden_field :post_id, value: @post.id %>
       <div class="mb-6">
         <%= form.label :author, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
-        <%= form.text_field :author, placeholder: 'Digite aqui o seu nome', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
+        <%= form.text_field :author, placeholder: 'Digite aqui o seu nome', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent', required: true%>
       </div>
       <div class="mb-6">
         <%= form.label :body, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
-        <%= form.text_area :body, placeholder: 'Digite aqui o seu comentário', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
+        <%= form.text_area :body, placeholder: 'Digite aqui o seu comentário', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent', required: true%>
       </div>
       <div class="flex items-center gap-2">
         <%= form.submit 'Comentar', class: 'bg-zinc-800 rounded-md p-2 px-3 border border-transparent hover:border-zinc-600 transition-all cursor-pointer', data: { disable_with: 'Criando..' }%>
