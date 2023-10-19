@@ -1,32 +1,19 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="h-1 bg-zinc-700 w-20 mb-6 mt-1"></div>
+  <div class="mb-6">
+    <%= form.label :title, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
+    <%= form.text_field :title, placeholder: 'Digite aqui o seu título', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
   </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
+  <div class="mb-6">
+    <%= form.label :author, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
+    <%= form.text_field :author, placeholder: 'Digite aqui o seu nome', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
   </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="mb-6">
+    <%= form.label :body, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
+    <%= form.text_area :body, placeholder: 'Digite aqui o conteudo do seu post', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="flex items-center gap-2">
+    <%= form.submit  class: 'bg-zinc-800 rounded-md p-2 px-3 border border-transparent hover:border-zinc-600 transition-all cursor-pointer', data: { disable_with: 'Criando..' }%>
+    <%= link_to 'Voltar', posts_path, class: 'bg-zinc-800 rounded-md p-2 px-3 border border-transparent hover:border-zinc-600 transition-all cursor-pointer' %>
   </div>
 <% end %>

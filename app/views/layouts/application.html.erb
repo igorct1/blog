@@ -18,11 +18,11 @@
       <% end %>
     </header>
     <div class="w-3/4 mx-auto ">
-      <div class="text-zinc-50">
+      <div class="text-zinc-50 mt-6">
         <%= yield %>
       </div>
     </div>
-    <footer class="bg-zinc-950 text-center py-4 text-zinc-50 mt-auto w-full">Copyright. all rights reserved - <%= Date.current.year %>
+    <footer class="bg-zinc-950 text-center py-4 text-zinc-50 mt-auto w-full">Copyright<span class="text-red-500">.</span> All rights reserved - <span class="text-red-500"><%= Date.current.year %></span>
     </footer>
   </body>
 </html>
