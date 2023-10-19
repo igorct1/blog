@@ -14,3 +14,28 @@
     <%= @post.body.gsub("\n", "<br>").html_safe %>
   </div>
 </div>
+<div>
+  <div class="flex justify-center items-center gap-2">
+    <h4>
+      <%= pluralize(@post.comments.count, 'Comentário')%>
+      <% if @post.comments.none? %>
+        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Seja o primeiro a comentar</span>
+      <% end %>
+    </h4>
+  </div>
+  <%= form_with(model: @comment) do |form| %>
+    <%= form.hidden_field :post_id, value: @post.id %>
+    <div class="mb-6">
+      <%= form.label :author, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
+      <%= form.text_field :author, placeholder: 'Digite aqui o seu nome', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
+    </div>
+    <div class="mb-6">
+      <%= form.label :body, class: 'block mb-2 text-sm font-medium text-zinc-50'%>
+      <%= form.text_area :body, placeholder: 'Digite aqui o seu comentário', class: 'border border-zinc-600 bg-zinc-800 w-full rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent'%>
+    </div>
+    <div class="flex items-center gap-2">
+      <%= form.submit 'Comentar', class: 'bg-zinc-800 rounded-md p-2 px-3 border border-transparent hover:border-zinc-600 transition-all cursor-pointer', data: { disable_with: 'Criando..' }%>
+      <%= link_to 'Voltar', posts_path, class: 'bg-zinc-800 rounded-md p-2 px-3 border border-transparent hover:border-zinc-600 transition-all cursor-pointer' %>
+    </div>
+  <% end %>
+</div>

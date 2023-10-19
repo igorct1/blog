@@ -17,7 +17,10 @@
         <p class="text-sm">Desenvolvimento Web, Tecnologia & Games.</p>
       <% end %>
     </header>
-    <div class="w-3/4 mx-auto ">
+    <div class="w-2/4 mx-auto">
+      <% flash.each do |type, message| %>
+        <p class="text-center my-4 text-zinc-50 <%= type == 'alert' ? 'bg-red-500' : 'bg-green-500 rounded-md p-2'%>"><%= message %></p>
+      <% end %>
       <div class="text-zinc-50 my-10">
         <%= yield %>
       </div>
